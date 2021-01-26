@@ -3,10 +3,7 @@ public class Main {
     public static void main(String[] args) {
         // Leader: Cole
         // Members: Amanda, Ben, Owen
-        int a = -8 / 5;
-        int b = 11 / 2;
-        double c = 14 / 4;
-        System.out.println(a + b + c);
+        mainMenu();
     }
 
     private static void mainMenu() {
@@ -30,6 +27,6 @@ public class Main {
     private static void sortStudents() {
         // sortLastName();
         // sortGPA();
-        // sortPeriod
+        // sortPeriod();
     }
 }
