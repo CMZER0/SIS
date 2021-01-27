@@ -6,6 +6,7 @@ public class Main {
         mainMenu();
         System.out.println("Cole Pull Request #1.");
         System.out.println("TESTING");
+        System.out.println("no");
     }
 
     private static void mainMenu() {
