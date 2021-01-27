@@ -13,7 +13,7 @@ public class Roster {
 
     public void setStudentList(ArrayList<Student> studentList) {
         this.studentList = studentList;
-        System.out.print("Help);
+        System.out.print("I think we got it");
     }
 
     public Student getStudent(int index) {
