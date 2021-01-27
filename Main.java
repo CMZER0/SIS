@@ -4,6 +4,7 @@ public class Main {
         // Leader: Cole
         // Members: Amanda, Ben, Owen
         mainMenu();
+        System.out.println("Cole Pull Request #1");
     }
 
     private static void mainMenu() {
