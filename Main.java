@@ -5,6 +5,7 @@ public class Main {
         // Members: Amanda, Ben, Owen
         mainMenu();
         System.out.println("Cole Pull Request #1.");
+        System.out.println("TESTING");
     }
 
     private static void mainMenu() {
