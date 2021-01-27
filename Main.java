@@ -12,6 +12,7 @@ public class Main {
         addOrDeleteStudent();
         changeGradeOrSchedule();
         sortStudents();
+        System.out.println("IM TIRED");
     }
 
     private static void addOrDeleteStudent() {
