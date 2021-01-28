@@ -33,6 +33,7 @@ public class Roster {
 
     public void addNewStudent(String name) {
         studentList.add(new Student(name));
+        
     }
 
     public void addNewStudent(int index, String name) { // Overidden
@@ -42,5 +43,11 @@ public class Roster {
     //////////////
     // METHODS //
     /////////////
-
+    public static void addStudent()
+    {
+    	Roster r = new Roster();
+        r.addNewStudent("Bob");
+        r.getStudent(0).getTranscript().add(new Course("",""));
+        
+    }
 }
