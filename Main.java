@@ -5,10 +5,11 @@ public class Main {
         // Members: Amanda, Ben, Owen
         mainMenu();
         System.out.println("Cole Pull Request #1.");
+        System.out.println("Cole Pull Request #2.");
     }
 
     private static void mainMenu() {
-        // NOTE: All methods should be able to be coded into the Roster class.
+        // NOTE: Most methods should be able to be coded into the Roster class.
         // with that said, please don't code into the Main class. thx!
         addOrDeleteStudent();
         changeGradeOrSchedule();
