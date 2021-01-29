@@ -1,24 +1,25 @@
 // Objectives given here: https://docs.google.com/document/d/1VyqRG5wR3q0exFC8klmNL9SVNYCZzdsOd8hYDabRpMk/edit
 public class Main {
+    static Roster r = new Roster();
+
     public static void main(String[] args) {
         // Leader: Cole
         // Members: Amanda, Ben, Owen
-        mainMenu();
-        System.out.println("Cole Pull Request #1.");
-        System.out.println("TESTING");
-        System.out.println("no");
+
+        mainMenu(r);
+
     }
 
-    private static void mainMenu() {
-        // NOTE: All methods should be able to be coded into the Roster class.
+    private static void mainMenu(Roster r) {
+        // NOTE: Most methods should be able to be coded into the Roster class.
         // with that said, please don't code into the Main class. thx!
-        addOrDeleteStudent();
+        addOrDeleteStudent(r);
         changeGradeOrSchedule();
         sortStudents();
     }
 
-    private static void addOrDeleteStudent() {
-        // addStudent();
+    private static void addOrDeleteStudent(Roster r) {
+        r.addStudent();
         // removeStudent();
     }
 
