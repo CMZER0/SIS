@@ -13,7 +13,6 @@ public class Roster {
 
     public void setStudentList(ArrayList<Student> studentList) {
         this.studentList = studentList;
-        System.out.print("So is our arraylist made of student objects or course objects?");
     }
 
     public Student getStudent(int index) {
@@ -44,4 +43,8 @@ public class Roster {
     // METHODS //
     /////////////
 
+    public void changeSchedule()
+    {
+    	System.out.println("Test statement for change schedule class");
+    }
 }
