@@ -3,16 +3,22 @@ public class Main {
     public static void main(String[] args) {
         // Leader: Cole
         // Members: Amanda, Ben, Owen
+<<<<<<< HEAD
         //mainMenu();
     	
     	Roster r = new Roster();
     	r.addStudents();
     
         
+=======
+        mainMenu();
+        System.out.println("Cole Pull Request #1.");
+        System.out.println("Cole Pull Request #2.");
+>>>>>>> 66e1695b48d671066556147a5d76f970fd12e087
     }
 
     private static void mainMenu() {
-        // NOTE: All methods should be able to be coded into the Roster class.
+        // NOTE: Most methods should be able to be coded into the Roster class.
         // with that said, please don't code into the Main class. thx!
         addOrDeleteStudent();
         changeGradeOrSchedule();
