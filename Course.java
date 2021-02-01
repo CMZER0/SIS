@@ -1,14 +1,17 @@
 public class Course {
-    private String name; // String containing the name of the course
-    private String grade; // String containing the grade.
+    protected String name; // String containing the name of the course
+    protected String letterGrade;// String containing the letter grade
+    protected double grade; // String containing the  number grade.
 
     //////////////////
     // Constructors //
     //////////////////
 
-    public Course(String name, String grade) {
+    public Course(String name, String letterGrade, double grade) {
         setName(name);
+        setLetterGrade(letterGrade);
         setGrade(grade);
+        
     }
 
     ///////////////////////
@@ -22,12 +25,22 @@ public class Course {
     public void setName(String name) {
         this.name = name;
     }
+    
+    public String getLetterGrade()
+    {
+	return letterGrade;
+    }
+    
+    public void setLetterGrade(String letterGrade)
+    {
+	this.letterGrade = letterGrade;
+    }
 
-    public String getGrade() {
+    public double getGrade() {
         return grade;
     }
 
-    public void setGrade(String grade) {
+    public void setGrade(double grade) {
         this.grade = grade;
     }
 
