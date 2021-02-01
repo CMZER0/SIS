@@ -1,4 +1,6 @@
 import java.io.File;
+import java.text.DecimalFormat;
+import java.util.Collections;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -59,7 +61,7 @@ public class Roster {
     {
 	Scanner studentFile = new Scanner(new File("StudentList.txt"));//Scanner that grabs the Student List 
 	
-	for(int i = 0; i < 24; i++)
+	while(studentFile.hasNext())
 	{
 	   String firstName = studentFile.next();
 	   String lastName = studentFile.next();
@@ -73,7 +75,7 @@ public class Roster {
     {
 	Scanner courseFile = new Scanner(new File("StudentList.txt"));
 	
-	for(int i = 0; i < 24; i++)
+	for(int i = 0; i < studentList.size(); i++)
 	{
 	    courseFile.next();
 	    courseFile.next();
@@ -152,15 +154,52 @@ public class Roster {
 	 
 	 return numberGrade;
     }
-    
+    private static DecimalFormat df2 = new DecimalFormat("#.##");
     public void displayTranscript()
     {
 	for(int i = 0; i < 24; i++)
 	{
-	    System.out.println(studentList.get(i).getName() + " " + studentList.get(i).getCourse(0).getName() + " " + studentList.get(i).getCourse(0).getLetterGrade() + " " + studentList.get(i).getCourse(1).getName() + " " + studentList.get(i).getCourse(1).getLetterGrade() + " " + studentList.get(i).getCourse(2).getName() + " " + studentList.get(i).getCourse(2).getLetterGrade());
+	    System.out.println();
+	    System.out.printf(i + ") " + studentList.get(i).getName() + " " + studentList.get(i).getCourse(0).getName() + " " + studentList.get(i).getCourse(0).getLetterGrade() + " " + studentList.get(i).getCourse(1).getName() + " " + studentList.get(i).getCourse(1).getLetterGrade() + " " + studentList.get(i).getCourse(2).getName() + " " + studentList.get(i).getCourse(2).getLetterGrade() + " GPA: " + df2.format(studentList.get(i).getGPA()));
+	   
 	}
     }
     
+    public void calculateGPA() //calculates and assigns student GPA
+    {
+	for (int i = 0; i < studentList.size(); i++)
+	{
+	    double calculatedGPA;
+	    calculatedGPA = (studentList.get(i).getCourse(0).getGrade() + studentList.get(i).getCourse(1).getGrade() + studentList.get(i).getCourse(2).getGrade()) / 3;
+	    studentList.get(i).setGPA(calculatedGPA);
+	}
+    }
+    
+    public void sortByGPA()
+    {
+	Collections.sort(studentList, new SortByGPA());
+    }
+    
+    public void sortByLastName()
+    {
+	Collections.sort(studentList, new SortByLast());
+    }
+    
+    public static String createLastName(String name)
+    {
+	    String lastName;
+	    lastName = name.substring(name.indexOf(" "), name.length());
+	    return lastName;
+    }
+    
+    public void createLastNames()
+    {
+	for(int i = 0; i < studentList.size(); i++)
+	{
+	    studentList.get(i).setLastName(createLastName(studentList.get(i).getName()));
+	}
+    }
+
     public void deleteStudent() {
         displayStudents();
         Scanner userInp = new Scanner(System.in);

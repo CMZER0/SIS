@@ -7,10 +7,15 @@ public class Main {
     public static void main(String[] args) throws IOException {
         // Leader: Cole
         // Members: Amanda, Ben, Owen
-        mainMenu(r);
-        
-        
-
+	Roster x = new Roster();
+	x.fillStudentList();
+	x.fillCourses();
+	x.calculateGPA();
+	x.createLastNames();
+	x.sortByLastName();
+	x.displayTranscript();
+	System.out.println();
+//        mainMenu(r);
     }
 
     private static void mainMenu(Roster r) {
