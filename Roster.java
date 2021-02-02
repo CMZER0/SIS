@@ -219,8 +219,6 @@ public class Roster {
     	//Note from 2-1-21: Basically a duplicate of the change schedule method
     	Scanner userInput = new Scanner(System.in);
     	System.out.println("Which student's grade would you like to change?");
-    	//Program is skipping over displayStudents and going straight to syso's
-    	displayStudents();
     	System.out.println(" ");
     	System.out.println("What is the student's first grade?");
     	String grade = userInput.nextLine();
