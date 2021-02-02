@@ -16,6 +16,7 @@ public class Main {
         sortStudents();
         System.out.println("cole pull req on 02.01.2021");
         System.out.println("cole pull req on 02.02.2021");
+        System.out.println("cole pull req on 02.02.2021");
     }
 
     private static void addOrDeleteStudent(Roster r) {
