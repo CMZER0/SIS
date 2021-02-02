@@ -12,6 +12,9 @@ public class Main {
 	r.calculateGPA();
 	r.createLastNames();
         mainMenu(r);
+
+        System.out.println("Pull on 2.1.21");
+
     }
 
     private static void mainMenu(Roster r) {
