@@ -225,6 +225,6 @@ public class Roster {
     	grade = userInput.nextLine();
     	System.out.println("What is the student's third grade?");
     	grade = userInput.nextLine();
-    	//First push got lost in cyberspace so we're trying again
+    	//First push got lost in cyberspace so we're trying again...and again
     }
 }
