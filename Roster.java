@@ -199,17 +199,19 @@ public class Roster {
     
     public void changeSchedule()
     {	
-    	//Note from 2-1-21: Have the basic idea, but need to figure out how to set elements with the arraylist set up
+    	//Note from 2-2-21: Should work as long as we get numbers on the student list
     	Scanner userInput = new Scanner(System.in);
     	System.out.println("Which student's schedule would you like to change?");
-    	//Program is skipping over displayStudents and going straight to syso's
     	displayStudents();
+    	int choice = userInput.nextInt();
+    	System.out.println(" ");
     	System.out.println("What is the student's first class?");
     	String course = userInput.nextLine();
+    	getStudent(choice).getCourse(0).setName(course);
     	System.out.println("What is the student's second class?");
-    	course = userInput.nextLine();
+    	getStudent(choice).getCourse(1).setName(course);
     	System.out.println("What is the student's third class?");
-    	course = userInput.nextLine();
+    	getStudent(choice).getCourse(2).setName(course);
     }
     
     public void changeGrade()
@@ -219,12 +221,12 @@ public class Roster {
     	System.out.println("Which student's grade would you like to change?");
     	//Program is skipping over displayStudents and going straight to syso's
     	displayStudents();
+    	System.out.println(" ");
     	System.out.println("What is the student's first grade?");
     	String grade = userInput.nextLine();
     	System.out.println("What is the student's second grade?");
     	grade = userInput.nextLine();
     	System.out.println("What is the student's third grade?");
     	grade = userInput.nextLine();
-    	//First push got lost in cyberspace so we're trying again...and again
     }
 }

@@ -7,6 +7,8 @@ public class Main {
     public static void main(String[] args) throws IOException {
         // Leader: Cole
         // Members: Amanda, Ben, Owen
+    	r.fillStudentList();
+    	r.fillCourses();
         mainMenu(r);
         
         
@@ -27,7 +29,8 @@ public class Main {
     }
 
     private static void changeGradeOrSchedule() {
-         r.changeGrade();
+    	
+         //r.changeGrade();
          r.changeSchedule();
     }
 
