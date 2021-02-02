@@ -8,9 +8,7 @@ public class Main {
         // Leader: Cole
         // Members: Amanda, Ben, Owen
         mainMenu(r);
-        
-        
-
+        System.out.println("Pull on 2.1.21");
     }
 
     private static void mainMenu(Roster r) {
