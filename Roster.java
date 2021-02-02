@@ -71,7 +71,7 @@ public class Roster {
 	
     }
     
-    public void fillCourses() throws IOException
+    public void fillCourses() throws IOException //Gets courses from text file and puts them in courses AL
     {
 	Scanner courseFile = new Scanner(new File("StudentList.txt"));
 	
@@ -96,7 +96,7 @@ public class Roster {
 	}
     }
     
-    public double gradeConverter(String letterGrade)
+    public double gradeConverter(String letterGrade) //converts the given letter grade and returns the number grade(on a 4pt scale)
     {
 	double numberGrade;
 	 if(letterGrade.equals("A+"))
@@ -157,7 +157,7 @@ public class Roster {
     private static DecimalFormat df2 = new DecimalFormat("#.##");
     public void displayTranscript()
     {
-	for(int i = 0; i < 24; i++)
+	for(int i = 0; i < studentList.size(); i++)
 	{
 	    System.out.println();
 	    System.out.printf(i + ") " + studentList.get(i).getName() + " " + studentList.get(i).getCourse(0).getName() + " " + studentList.get(i).getCourse(0).getLetterGrade() + " " + studentList.get(i).getCourse(1).getName() + " " + studentList.get(i).getCourse(1).getLetterGrade() + " " + studentList.get(i).getCourse(2).getName() + " " + studentList.get(i).getCourse(2).getLetterGrade() + " GPA: " + df2.format(studentList.get(i).getGPA()));
@@ -175,29 +175,34 @@ public class Roster {
 	}
     }
     
-    public void sortByGPA()
+    public void sortByGPA() //sorts student list by GPA (highest to lowest)
     {
 	Collections.sort(studentList, new SortByGPA());
     }
     
-    public void sortByLastName()
+    public void sortByLastName() //sorts student list in alphabetical order by last name
     {
 	Collections.sort(studentList, new SortByLast());
     }
     
-    public static String createLastName(String name)
+    public static String createLastName(String name) // outputs the last name from a full name input
     {
 	    String lastName;
 	    lastName = name.substring(name.indexOf(" "), name.length());
 	    return lastName;
     }
     
-    public void createLastNames()
+    public void createLastNames() // sets each students last name
     {
 	for(int i = 0; i < studentList.size(); i++)
 	{
 	    studentList.get(i).setLastName(createLastName(studentList.get(i).getName()));
 	}
+    }
+    
+    public void sortByPeriod() // sorts student list by period
+    {
+	Collections.sort(studentList, new SortByPeriod());
     }
 
     public void deleteStudent() {
@@ -228,11 +233,14 @@ public class Roster {
     }
 
     public void displayStudents() {
+	int counter = 0;
         for (Student s : studentList) {
-            System.out.print("\n" + s.getName() + "| ");
+            System.out.print("\n" + counter + ") "+ s.getName() + "| ");
+            counter++;
             for (Course c : s.getTranscript()) {
-                System.out.print(c.getName() + ": " + c.getGrade() + ", ");
+                System.out.print(c.getName() + ": " + c.getLetterGrade() + ", ");
             }
+            System.out.print("GPA: " + df2.format(s.getGPA()));
         }
     }
 }

@@ -1,5 +1,5 @@
 import java.io.IOException;
-
+import java.util.Scanner;
 // Objectives given here: https://docs.google.com/document/d/1VyqRG5wR3q0exFC8klmNL9SVNYCZzdsOd8hYDabRpMk/edit
 public class Main {
     static Roster r = new Roster();
@@ -7,23 +7,33 @@ public class Main {
     public static void main(String[] args) throws IOException {
         // Leader: Cole
         // Members: Amanda, Ben, Owen
-	Roster x = new Roster();
-	x.fillStudentList();
-	x.fillCourses();
-	x.calculateGPA();
-	x.createLastNames();
-	x.sortByLastName();
-	x.displayTranscript();
-	System.out.println();
-//        mainMenu(r);
+	r.fillStudentList();
+	r.fillCourses();
+	r.calculateGPA();
+	r.createLastNames();
+        mainMenu(r);
     }
 
     private static void mainMenu(Roster r) {
         // NOTE: Most methods should be able to be coded into the Roster class.
         // with that said, please don't code into the Main class. thx!
-        addOrDeleteStudent(r);
-        changeGradeOrSchedule();
-        sortStudents();
+	System.out.println("Would you like to 1 sort the students, 2 add or delete students, or 3 change a students grade or schedule?");
+        Scanner actionChoiceInp = new Scanner(System.in);
+        int actionChoice = actionChoiceInp.nextInt();
+        if(actionChoice == 1)
+        {
+            sortStudents();
+        }
+        else if(actionChoice == 2)
+        {
+            addOrDeleteStudent(r);
+        }
+        else
+        {
+            changeGradeOrSchedule();
+        }
+        
+        
     }
 
     private static void addOrDeleteStudent(Roster r) {
@@ -37,8 +47,6 @@ public class Main {
     }
 
     private static void sortStudents() {
-        // sortLastName();
-        // sortGPA();
-        // sortPeriod();
+        
     }
 }
