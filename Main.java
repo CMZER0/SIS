@@ -27,7 +27,7 @@ public class Main {
     }
 
     private static void changeGradeOrSchedule() {
-        // changeGrade();
+         r.changeGrade();
          r.changeSchedule();
     }
 

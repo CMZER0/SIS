@@ -16,7 +16,6 @@ public class Roster {
 
     public void setStudentList(ArrayList<Student> studentList) {
         this.studentList = studentList;
-        System.out.print("Help);
     }
 
     public Student getStudent(int index) {
@@ -200,14 +199,31 @@ public class Roster {
     
     public void changeSchedule()
     {	
+    	//Note from 2-1-21: Have the basic idea, but need to figure out how to set elements with the arraylist set up
     	Scanner userInput = new Scanner(System.in);
     	System.out.println("Which student's schedule would you like to change?");
-    	//Thought this was for displaying student list; it's throwing IndexOutOfBounds
-    	//displayTranscript();
+    	//Program is skipping over displayStudents and going straight to syso's
+    	displayStudents();
     	System.out.println("What is the student's first class?");
-    	//Need to figure out how to set course
+    	String course = userInput.nextLine();
     	System.out.println("What is the student's second class?");
+    	course = userInput.nextLine();
     	System.out.println("What is the student's third class?");
-    	
+    	course = userInput.nextLine();
+    }
+    
+    public void changeGrade()
+    {
+    	//Note from 2-1-21: Basically a duplicate of the change schedule method
+    	Scanner userInput = new Scanner(System.in);
+    	System.out.println("Which student's grade would you like to change?");
+    	//Program is skipping over displayStudents and going straight to syso's
+    	displayStudents();
+    	System.out.println("What is the student's first grade?");
+    	String grade = userInput.nextLine();
+    	System.out.println("What is the student's second grade?");
+    	grade = userInput.nextLine();
+    	System.out.println("What is the student's third grade?");
+    	grade = userInput.nextLine();
     }
 }
