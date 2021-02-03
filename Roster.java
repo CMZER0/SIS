@@ -152,56 +152,10 @@ public class Roster {
 		nG = 0;
 	    }
 	 
-	 switch(letterGrade)
-	 {
-	 case "A+":
-		 nG = 4.0;
-	 break;
-	 
-	 case "A":
-	 	nG = 4.0;
-	 	break;
-	 case "A-":
-		 nG = 3.7;
-		 break;
-	 case "B+":
-		 nG = 3.3;
-		 break;
-	 case "B":
-		 nG = 3.0;
-		 break;
-	 case "B-":
-	 	nG = 2.7;
-	 	break;
-	 case "C+":
-		 nG = 2.3;
-		 break;
-	 case "C":
-		 nG = 2.0;
-		 break;
-	 case "C-":
-		 nG = 1.7;
-		 break;
-	 case "D+":
-		 nG = 1.3;
-		 break;
-	 case "D":
-		 nG = 1.0;
-		 break;
-	 case "D-":
-		 nG = 0.7;
-		 break;
-	 default:
-		 nG = 0;
-		 break;
+	
 	
 	 	
-	 
-		 
-	 }
-	 
-	 return nG;
-    }
+	  }
     
     public void displayTranscript()
     {
