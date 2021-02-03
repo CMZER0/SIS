@@ -47,6 +47,23 @@ public class Main {
     }
 
     private static void sortStudents() {
+	System.out.println("Would you like to 1 sort by GPA, 2 by last name, or 3 by period?");
+        Scanner sortChoiceInp = new Scanner(System.in);
+        int sortChoice = sortChoiceInp.nextInt();
+        if(sortChoice == 1)
+        {
+            r.sortByGPA();
+        }
+        else if(sortChoice == 2)
+        {
+            r.sortByLastName();
+        }
+        else
+        {
+            r.sortByPeriod();
+        }
+        
+	r.displayStudents();
         
     }
 }
