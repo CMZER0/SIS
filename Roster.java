@@ -96,66 +96,7 @@ public class Roster {
 	}
     }
     
-    public double gradeConverter(String letterGrade)
-    {
-	double nG;
-	 if(letterGrade.equals("A+"))
-	    {
-		nG = 4.0;
-	    }
-	    else if(letterGrade.equals("A"))
-	    {
-		nG = 4.0;
-	    }
-	    else if(letterGrade.equals("A-"))
-	    {
-		nG = 3.7;
-	    }
-	    else if(letterGrade.equals("B+"))
-	    {
-		nG = 3.3;
-	    }
-	    else if(letterGrade.equals("B"))
-	    {
-		nG = 3.0;
-	    }
-	    else if(letterGrade.equals("B-"))
-	    {
-		nG = 2.7;
-	    }
-	    else if(letterGrade.equals("C+"))
-	    {
-		nG = 2.3;
-	    }
-	    else if(letterGrade.equals("C"))
-	    {
-		nG = 2.0;
-	    }
-	    else if(letterGrade.equals("C-"))
-	    {
-		nG = 1.7;
-	    }
-	    else if(letterGrade.equals("D+"))
-	    {
-		nG = 1.3;
-	    }
-	    else if(letterGrade.equals("D"))
-	    {
-		nG = 1.0;
-	    }
-	    else if(letterGrade.equals("D-"))
-	    {
-		nG = 0.7;
-	    }
-	    else
-	    {
-		nG = 0;
-	    }
-	 
-	
-	
-	 	
-	  }
+    
     
     public void displayTranscript()
     {
