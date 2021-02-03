@@ -2,8 +2,9 @@ import java.util.ArrayList;
 
 public class Student {
     private String name; // String containing the name of the student.
+    private String lastName;
     private ArrayList<Course> transcript = new ArrayList<>(); // Arraylist holding each course.
-
+    private double GPA;
     //////////////////
     // Constructors //
     //////////////////
@@ -23,7 +24,23 @@ public class Student {
     public void setName(String name) {
         this.name = name;
     }
-
+    
+    public String getLastName()
+    {
+	return lastName;
+    }
+    public void setLastName(String lastName)
+    {
+	this.lastName = lastName;
+    }
+    public double getGPA()
+    {
+	return GPA;
+    }
+   public void setGPA(double GPA)
+   {
+       this.GPA = GPA;
+   }
     public ArrayList<Course> getTranscript() {
         return transcript;
     }
