@@ -198,7 +198,7 @@ public class Roster {
     }
     
     public void changeSchedule()
-    {	//Pull request 2-2-21!
+    {
     	//Note from 2-2-21: Should work as long as we get numbers on the student list
     	Scanner userInput = new Scanner(System.in);
     	System.out.println("Which student's schedule would you like to change?");
@@ -209,22 +209,29 @@ public class Roster {
     	String course = userInput.nextLine();
     	getStudent(choice).getCourse(0).setName(course);
     	System.out.println("What is the student's second class?");
+    	course = userInput.nextLine();
     	getStudent(choice).getCourse(1).setName(course);
     	System.out.println("What is the student's third class?");
+    	course = userInput.nextLine();
     	getStudent(choice).getCourse(2).setName(course);
     }
     
     public void changeGrade()
     {
-    	//Note from 2-1-21: Basically a duplicate of the change schedule method
+    	//Fulfilling pull request for 2-3-2021
     	Scanner userInput = new Scanner(System.in);
     	System.out.println("Which student's grade would you like to change?");
+    	displayStudents();
+    	int choice = userInput.nextInt();
     	System.out.println(" ");
     	System.out.println("What is the student's first grade?");
     	String grade = userInput.nextLine();
+    	getStudent(choice).getCourse(0).setLetterGrade(grade);
     	System.out.println("What is the student's second grade?");
     	grade = userInput.nextLine();
+    	getStudent(choice).getCourse(0).setLetterGrade(grade);
     	System.out.println("What is the student's third grade?");
     	grade = userInput.nextLine();
+    	getStudent(choice).getCourse(0).setLetterGrade(grade);
     }
 }
