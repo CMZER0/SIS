@@ -9,8 +9,12 @@ public class Main {
         // Members: Amanda, Ben, Owen
 
         mainMenu(r);
+<<<<<<< HEAD
 
 
+=======
+        System.out.println("Pull on 2.1.21");
+>>>>>>> c7a85ec61cda1d923068e8eef6953a5a7ac32352
     }
 
     private static void mainMenu(Roster r) {
