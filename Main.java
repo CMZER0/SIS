@@ -7,8 +7,11 @@ public class Main {
     public static void main(String[] args) throws IOException {
         // Leader: Cole
         // Members: Amanda, Ben, Owen
+    	r.fillStudentList();
+    	r.fillCourses();
         mainMenu(r);
         System.out.println("Pull on 2.1.21");
+        System.out.println("PULL");
     }
 
     private static void mainMenu(Roster r) {
