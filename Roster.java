@@ -6,55 +6,61 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Roster {
-	private ArrayList<Student> studentList = new ArrayList<>(); // ArrayList containing the list of students
+	
+    private ArrayList<Student> studentList = new ArrayList<>(); // ArrayList containing the list of students
 
-	///////////////////////
-	// GETTERS & SETTERS //
-	///////////////////////
+    ///////////////////////
+    // GETTERS & SETTERS //
+    ///////////////////////
 
-	public ArrayList<Student> getStudentList() {
-		return studentList;
-	}
+    public ArrayList<Student> getStudentList() {
+        return studentList;
+    }
 
-	public void setStudentList(ArrayList<Student> studentList) {
-		this.studentList = studentList;
-	}
+    public void setStudentList(ArrayList<Student> studentList) {
+        this.studentList = studentList;
+    }
 
-	public Student getStudent(int index) {
-		return studentList.get(index);
-	}
+    public Student getStudent(int index) {
+        return studentList.get(index);
+    }
 
-	public void setStudent(int index, Student element) {
-		studentList.set(index, element);
-	}
+    public void setStudent(int index, Student element) {
+        studentList.set(index, element);
+    }
 
-	public void addStudent(Student e) {
-		studentList.add(e);
-	}
+    public void addStudent(Student e) {
+        studentList.add(e);
+    }
 
-	public void addStudent(int index, Student e) { // Overidden
-		studentList.add(index, e);
-	}
+    public void addStudent(int index, Student e) { // Overidden
+        studentList.add(index, e);
+    }
 
-	public void addNewStudent(String name) {
-		studentList.add(new Student(name));
-	}
+    public void addNewStudent(String name) {
+        studentList.add(new Student(name));
+        
+    }
 
-	public void addNewStudent(int index, String name) { // Overidden
-		studentList.add(index, new Student(name));
-	}
+    public void addNewStudent(int index, String name) { // Overidden
+        studentList.add(index, new Student(name));
+    }
 
-	public void removeStudent(int index) {
-		studentList.remove(index);
-	}
+    public void removeStudent(int index) {
+        studentList.remove(index);
+    }
 
-	public int classSize() {
-		return studentList.size();
-	}
+    public int classSize() {
+        return studentList.size();
+    }
 
-	//////////////
-	// METHODS //
-	/////////////
+    //////////////
+    // METHODS //
+    /////////////
+
+
+    
+  
 
 	public void fillStudentList() throws IOException // Gets student names, creates Student objects, assigns Student
 														// name,and puts them in studentList
@@ -96,6 +102,7 @@ public class Roster {
 
 	public double gradeConverter(String letterGrade) // converts the given letter grade and returns the number grade(on
 														// a 4pt scale)
+
 	{
 		double numberGrade;
 		if (letterGrade.equals("A+")) {
@@ -126,6 +133,7 @@ public class Roster {
 			numberGrade = 0;
 		}
 
+		
 		return numberGrade;
 	}
 
@@ -144,15 +152,48 @@ public class Roster {
 		}
 	}
 
-	public void calculateGPA() // calculates and assigns student GPA
-	{
-		for (int i = 0; i < studentList.size(); i++) {
-			double calculatedGPA;
-			calculatedGPA = (studentList.get(i).getCourse(0).getGrade() + studentList.get(i).getCourse(1).getGrade()
-					+ studentList.get(i).getCourse(2).getGrade()) / 3;
-			studentList.get(i).setGPA(calculatedGPA);
-		}
-	}
+	public void calculateGPA() //calculates and assigns student GPA
+    {
+	for (int i = 0; i < studentList.size(); i++) {
+		double calculatedGPA;
+		calculatedGPA = (studentList.get(i).getCourse(0).getGrade() + studentList.get(i).getCourse(1).getGrade() + studentList.get(i).getCourse(2).getGrade()) / 3;
+		studentList.get(i).setGPA(calculatedGPA);
+}
+}
+    
+    
+    
+    
+    
+
+    public void deleteStudent() {
+        displayStudents();
+        Scanner userInp = new Scanner(System.in);
+        System.out.println("Select what student you would like to delete");
+        int choice = userInp.nextInt();
+        System.out.println(getStudent(choice + 1).getName() + " will be removed.");
+        removeStudent(choice + 1);
+    }
+
+    public void addStudent() {
+        Scanner userInp = new Scanner(System.in);
+        System.out.println("What is the name of your new student?");
+        String Name = userInp.nextLine();
+        addNewStudent(Name);
+
+        for (int i = 0; i < 3; i++) {
+            int p = i + 1;
+            System.out.println("Please enter course " + p + " name:");
+            String course = userInp.nextLine();
+            System.out.println("Please enter course " + p + " grade:");
+            String grade = userInp.nextLine();
+            getStudent(classSize() - 1).getTranscript().add(new Course(course, grade, gradeConverter(grade)));
+        }
+
+        displayStudents();
+    }
+
+    
 
 	public void sortByGPA() // sorts student list by GPA (highest to lowest)
 	{
@@ -183,32 +224,9 @@ public class Roster {
 		Collections.sort(studentList, new SortByPeriod());
 	}
 
-	public void deleteStudent() {
-		displayStudents();
-		Scanner userInp = new Scanner(System.in);
-		System.out.println("Select what student you would like to delete");
-		int choice = userInp.nextInt();
-		System.out.println(getStudent(choice).getName() + " will be removed.");
-		removeStudent(choice);
-	}
+	
 
-	public void addStudent() {
-		Scanner userInp = new Scanner(System.in);
-		System.out.println("What is the name of your new student?");
-		String Name = userInp.nextLine();
-		addNewStudent(Name);
-
-		for (int i = 0; i < 3; i++) {
-			int p = i + 1;
-			System.out.println("Please enter course " + p + " name:");
-			String course = userInp.nextLine();
-			System.out.println("Please enter course " + p + " grade:");
-			String grade = userInp.nextLine();
-			getStudent(classSize() - 1).getTranscript().add(new Course(course, grade, gradeConverter(grade)));
-		}
-
-		displayStudents();
-	}
+	
 
 	public void displayStudents() {
 		for (Student s : studentList) {
@@ -220,4 +238,5 @@ public class Roster {
 		}
 		System.out.print("\n\n");
 	}
+
 }

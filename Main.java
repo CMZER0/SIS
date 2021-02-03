@@ -11,7 +11,7 @@ public class Main {
         // Members: Amanda, Ben, Owen
         r.fillStudentList();
         r.fillCourses();
-        r.calculateGPA();
+        //r.calculateGPA();
         r.createLastNames();
         mainMenu();
     }
