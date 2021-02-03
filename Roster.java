@@ -151,27 +151,14 @@ public class Roster {
 		}
 	}
 
-	//public void calculateGPA() // calculates and assigns student GPA
-	//{
-
-	    //courseFile.next();
-	    //courseFile.next();
-	    //String per1Class = courseFile.next();
-	    //String per1LetterGrade = courseFile.next();
-	    //String per2Class = courseFile.next();
-	    //String per2LetterGrade = courseFile.next();
-	    //String per3Class = courseFile.next();
-	    //String per3LetterGrade = courseFile.next();
-	    
-	    //double per1NumberGrade = gradeConverter(per1LetterGrade);
-	    //double per2NumberGrade = gradeConverter(per2LetterGrade);
-	    //double per3NumberGrade = gradeConverter(per3LetterGrade);
-	    
-	    //getStudent(i).getTranscript().add(new Course(per1Class, per1LetterGrade, per1NumberGrade));
-	    //getStudent(i).getTranscript().add(new Course(per2Class, per2LetterGrade, per2NumberGrade));
-	    //getStudent(i).getTranscript().add(new Course(per3Class, per3LetterGrade, per3NumberGrade));
-	
-//}
+	public void calculateGPA() //calculates and assigns student GPA
+    {
+	for (int i = 0; i < studentList.size(); i++) {
+		double calculatedGPA;
+		calculatedGPA = (studentList.get(i).getCourse(0).getGrade() + studentList.get(i).getCourse(1).getGrade() + studentList.get(i).getCourse(2).getGrade()) / 3;
+		studentList.get(i).setGPA(calculatedGPA);
+}
+}
     
     
     
