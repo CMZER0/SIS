@@ -208,7 +208,12 @@ public class Roster {
 			getStudent(classSize() - 1).getTranscript().add(new Course(course, grade, gradeConverter(grade)));
 		}
 		studentList.get(studentList.size()-1).setLastName(createLastName(Name));
+		double calculatedGPA = 0;
+		calculatedGPA = (studentList.get(studentList.size()-1).getCourse(0).getGrade() + studentList.get(studentList.size()-1).getCourse(1).getGrade()
+			+ studentList.get(studentList.size()-1).getCourse(2).getGrade()) / 3;
+	studentList.get(studentList.size()-1).setGPA(calculatedGPA);
 		displayStudents();
+		
 	}
 
 	public void displayStudents() {
