@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Course {
     protected String name; // String containing the name of the course
     protected String letterGrade;// String containing the letter grade
@@ -7,11 +10,10 @@ public class Course {
     // Constructors //
     //////////////////
 
-    public Course(String name, String letterGrade, double grade) {
+    public Course(String name, String letterGrade) {
         setName(name);
         setLetterGrade(letterGrade);
-        setGrade(grade);
-
+        setDoubleGrade(letterGrade);
     }
 
     ///////////////////////
@@ -34,45 +36,19 @@ public class Course {
         this.letterGrade = letterGrade;
     }
 
-    public double getGrade() {
+    public void setDoubleGrade(String in) // converts the given letter grade and returns the number grade(on
+                                          // a 4pt scale)
+    {
+        ArrayList<Double> gradeScaleDoubles = new ArrayList<>(12);
+        gradeScaleDoubles.addAll(Arrays.asList(4.0, 4.0, 3.7, 3.3, 3.0, 2.7, 2.3, 2.0, 1.7, 1.3, 1.0, 0.7, 0.0));
+        ArrayList<String> gradeScaleStrings = new ArrayList<>(12);
+        gradeScaleStrings
+                .addAll(Arrays.asList("A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "F"));
+        this.grade = gradeScaleDoubles.get(gradeScaleStrings.indexOf(in));
+    }
+
+    public double getDoubleGrade() {
         return grade;
-    }
-
-    public void setGrade(double grade) {
-        this.grade = grade;
-    }
-
-    public static double getGradeDouble(String letterGrade) {
-        double numberGrade;
-        if (letterGrade.equals("A+")) {
-            numberGrade = 4.0;
-        } else if (letterGrade.equals("A")) {
-            numberGrade = 4.0;
-        } else if (letterGrade.equals("A-")) {
-            numberGrade = 3.7;
-        } else if (letterGrade.equals("B+")) {
-            numberGrade = 3.3;
-        } else if (letterGrade.equals("B")) {
-            numberGrade = 3.0;
-        } else if (letterGrade.equals("B-")) {
-            numberGrade = 2.7;
-        } else if (letterGrade.equals("C+")) {
-            numberGrade = 2.3;
-        } else if (letterGrade.equals("C")) {
-            numberGrade = 2.0;
-        } else if (letterGrade.equals("C-")) {
-            numberGrade = 1.7;
-        } else if (letterGrade.equals("D+")) {
-            numberGrade = 1.3;
-        } else if (letterGrade.equals("D")) {
-            numberGrade = 1.0;
-        } else if (letterGrade.equals("D-")) {
-            numberGrade = 0.7;
-        } else {
-            numberGrade = 0;
-        }
-
-        return numberGrade;
     }
 
     //////////////
