@@ -205,34 +205,50 @@ public class Roster {
     	displayStudents();
     	int choice = userInput.nextInt();
     	System.out.println(" ");
+    	
+    	Scanner firstClassInput = new Scanner(System.in);
     	System.out.println("What is the student's first class?");
-    	String course = userInput.nextLine();
-    	getStudent(choice).getCourse(0).setName(course);
+    	String courseOne = firstClassInput.nextLine();
+    	getStudent(choice).getCourse(0).setName(courseOne);
+    	System.out.println(" ");
+    	
+    	Scanner secondClassInput = new Scanner(System.in);
     	System.out.println("What is the student's second class?");
-    	course = userInput.nextLine();
-    	getStudent(choice).getCourse(1).setName(course);
+    	String courseTwo = secondClassInput.nextLine();
+    	getStudent(choice).getCourse(1).setName(courseTwo);
+    	System.out.println(" ");
+    	
+    	Scanner thirdClassInput = new Scanner(System.in);
     	System.out.println("What is the student's third class?");
-    	course = userInput.nextLine();
-    	getStudent(choice).getCourse(2).setName(course);
+    	String courseThree = thirdClassInput.nextLine();
+    	getStudent(choice).getCourse(2).setName(courseThree);
+    	System.out.println(" ");
+    	displayStudents();
     }
     
     public void changeGrade()
     {
-    	//Fulfilling pull request for 2-3-2021
-    	//Attempt two...arghh
+    	
     	Scanner userInput = new Scanner(System.in);
     	System.out.println("Which student's grade would you like to change?");
     	displayStudents();
     	int choice = userInput.nextInt();
     	System.out.println(" ");
+    	
+    	Scanner gradeOneInput = new Scanner(System.in);
     	System.out.println("What is the student's first grade?");
-    	String grade = userInput.nextLine();
-    	getStudent(choice).getCourse(0).setLetterGrade(grade);
+    	String gradeOne = gradeOneInput.nextLine();
+    	getStudent(choice).getCourse(0).setLetterGrade(gradeOne);
+    	
+    	Scanner gradeTwoInput = new Scanner(System.in);
     	System.out.println("What is the student's second grade?");
-    	grade = userInput.nextLine();
-    	getStudent(choice).getCourse(0).setLetterGrade(grade);
+    	String gradeTwo = gradeTwoInput.nextLine();
+    	getStudent(choice).getCourse(1).setLetterGrade(gradeTwo);
+    	
+    	Scanner gradeThreeInput = new Scanner(System.in);
     	System.out.println("What is the student's third grade?");
-    	grade = userInput.nextLine();
-    	getStudent(choice).getCourse(0).setLetterGrade(grade);
+    	String gradeThree = gradeThreeInput.nextLine();
+    	getStudent(choice).getCourse(2).setLetterGrade(gradeThree);
+    	displayStudents();
     }
 }

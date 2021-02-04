@@ -30,7 +30,7 @@ public class Main {
 
     private static void changeGradeOrSchedule() {
     	
-         //r.changeGrade();
+         r.changeGrade();
          r.changeSchedule();
     }
 
