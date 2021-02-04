@@ -9,9 +9,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         // Leader: Cole
         // Members: Amanda, Ben, Owen
-        r.fillStudentList();
-        r.fillCourses();
-        r.calculateGPA();
+        r.newStudentList();
         r.createLastNames();
         mainMenu();
     }
@@ -33,6 +31,9 @@ public class Main {
                     break;
                 case 3:
                     changeGradeOrSchedule();
+                    break;
+                case 5:
+                    r.displayStudents();
                     break;
                 case 4:
                     System.exit(0);
