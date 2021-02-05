@@ -161,7 +161,10 @@ public class Roster {
 
 	public void sortByLastName() // sorts student list in alphabetical order by last name
 	{
+
 		Collections.sort(studentList, new SortByLast());
+		
+		
 	}
 
 	public static String createLastName(String name) // outputs the last name from a full name input
@@ -193,11 +196,13 @@ public class Roster {
 	}
 
 	public void addStudent() {
+
 		Scanner userInp = new Scanner(System.in);
 		System.out.println("What is the name of your new student?");
 		String Name = userInp.nextLine();
 		addNewStudent(Name);
 		
+
 
 		for (int i = 0; i < 3; i++) {
 			int p = i + 1;
@@ -218,7 +223,7 @@ public class Roster {
 
 	public void displayStudents() {
 		for (Student s : studentList) {
-			System.out.print("\n[" + studentList.indexOf(s) + "] " + s.getName() + "| ");
+			System.out.print("\n[" + studentList.indexOf(s) + "] " + s.getfirstName() + " " + s.getLastName() + "| ");
 			for (Course c : s.getTranscript()) {
 				System.out.print(c.getName() + ": " + c.getLetterGrade() + ", ");
 			}

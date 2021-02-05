@@ -1,9 +1,8 @@
 import java.io.IOException;
-import java.util.InputMismatchException;
-import java.util.Scanner;
 
 // Objectives given here: https://docs.google.com/document/d/1VyqRG5wR3q0exFC8klmNL9SVNYCZzdsOd8hYDabRpMk/edit
 public class Main {
+   
     static Roster r = new Roster();
 
     public static void main(String[] args) throws IOException {
@@ -24,11 +23,14 @@ public class Main {
         r.calculateGPA();
         r.createLastNames();
         mainMenu();
+
     }
 
-    private static void mainMenu() {
+   
+    private static void mainMenu(Roster r) {
         // NOTE: Most methods should be able to be coded into the Roster class.
         // with that said, please don't code into the Main class. thx!
+      
         try {
             Scanner input = new Scanner(System.in);
             System.out.print(
@@ -66,10 +68,11 @@ public class Main {
         {
          r.deleteStudent();
         }
-        // removeStudent();
+       
     }
 
     private static void changeGradeOrSchedule() {
+      
 	try {
 	Scanner input = new Scanner(System.in);
         System.out.print("Would you like to \n1) Change Student's Schedule \n2) Change Student's Grade");
@@ -113,4 +116,3 @@ public class Main {
         }
     }
 }
-
