@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Student {
-    private String firstName; // String containing the firstName of the student.
+    private String name; // String containing the name of the student.
     private String lastName;
     private ArrayList<Course> transcript = new ArrayList<>(); // Arraylist holding each course.
     private double GPA;
@@ -9,49 +9,38 @@ public class Student {
     // Constructors //
     //////////////////
 
-    public Student(String firstName, String lastName) {
-        setName(firstName, lastName);
+    public Student(String name) {
+        setName(name);
     }
 
     ///////////////////////
     // GETTERS & SETTERS //
     ///////////////////////
+
     public String getName() {
-        return firstName + " " + lastName;
+        return name;
     }
 
-    public void setName(String firstName, String lastName) {
-        setfirstName(firstName);
-        setLastName(lastName);
+    public void setName(String name) {
+        this.name = name;
     }
-
-    public String getfirstName() {
-        return firstName;
+    
+    public String getLastName()
+    {
+	return lastName;
     }
-
-    public String getLastName() {
-        return lastName;
+    public void setLastName(String lastName)
+    {
+	this.lastName = lastName;
     }
-
-    public void setfirstName(String firstName) {
-        this.firstName = firstName;
+    public double getGPA()
+    {
+	return GPA;
     }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public double getGPA() {
-        return GPA;
-    }
-
-    public void setGPA() {
-        for (Course c : transcript) {
-            this.GPA = (getCourse(c).getDoubleGrade() + getCourse(c).getDoubleGrade() + getCourse(c).getDoubleGrade())
-                    / getTranscript().size();
-        }
-    }
-
+   public void setGPA(double GPA)
+   {
+       this.GPA = GPA;
+   }
     public ArrayList<Course> getTranscript() {
         return transcript;
     }
@@ -81,3 +70,4 @@ public class Student {
     /////////////
 
 }
+

@@ -9,9 +9,20 @@ public class Main {
     public static void main(String[] args) throws IOException {
         // Leader: Cole
         // Members: Amanda, Ben, Owen
-
-	r.newStudentList();
+	r.fillStudentList();
+	r.fillCourses();
+	r.calculateGPA();
+	r.createLastNames();
 	r.displayStudents();
+        mainMenu();
+
+        System.out.println("Pull on 2.1.21");
+
+
+        r.fillStudentList();
+        r.fillCourses();
+        r.calculateGPA();
+        r.createLastNames();
         mainMenu();
     }
 
@@ -21,7 +32,7 @@ public class Main {
         try {
             Scanner input = new Scanner(System.in);
             System.out.print(
-                    "Main Menu\n1) Sort Students\n2) Add/Delete Students\n3) Change Students Grade Schedule\n4) Exit\n");
+                    "Main Menu\n1) Sort Students\n2) Add/Delete Students\n3) Change Students Grade or Schedule\n4) Exit\n");
             int userIn = input.nextInt();
             switch (userIn) {
                 case 1:
@@ -32,9 +43,6 @@ public class Main {
                     break;
                 case 3:
                     changeGradeOrSchedule();
-                    break;
-                case 5:
-                    r.displayStudents();
                     break;
                 case 4:
                     System.exit(0);
@@ -47,19 +55,45 @@ public class Main {
     }
 
     private static void addOrDeleteStudent() {
+	Scanner input = new Scanner(System.in);
+        System.out.print("Would you like to \n1) Add Student \n2) Delete Student");
+        int userIn = input.nextInt();
+        if(userIn == 1)
+        {
         r.addStudent();
+        }
+        else
+        {
+         r.deleteStudent();
+        }
         // removeStudent();
     }
 
     private static void changeGradeOrSchedule() {
-        // changeGrade();
-        // changeSchedule();
+	try {
+	Scanner input = new Scanner(System.in);
+        System.out.print("Would you like to \n1) Change Student's Schedule \n2) Change Student's Grade");
+        int userIn = input.nextInt();
+        if(userIn == 1)
+        {
+        r.changeSchedule();
+        }
+        else
+        {
+         r.changeGrade();
+        }
+	}
+	catch (InputMismatchException e) {
+	    System.out.println("Sorry, that was not a valid input.");
+            sortStudents();
+	}
+	
     }
 
     private static void sortStudents() {
         try {
             Scanner sortChoiceInp = new Scanner(System.in);
-            System.out.println("Sort Students\n1) Sort by GPA\n2) Sorty by Last Name\n3) Sort by Period");
+            System.out.println("Sort Students\n1) Sort by GPA\n2) Sort by Last Name\n3) Sort by Period");
             int sortChoice = sortChoiceInp.nextInt();
             switch (sortChoice) {
                 case 1:
@@ -79,3 +113,4 @@ public class Main {
         }
     }
 }
+
