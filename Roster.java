@@ -79,7 +79,10 @@ public class Roster {
 	}
 
 	public void sortByLastName() { // sorts student list in alphabetical order by last name
+		
 		Collections.sort(studentList, new SortByLast());
+		
+		
 	}
 
 	public static String createLastName(String name) { // outputs the last name from a full name input
@@ -117,22 +120,27 @@ public class Roster {
 	public void addStudent() {
 		try {
 			Scanner userInp = new Scanner(System.in);
-			System.out.println("Input name :");
-			// addNewStudent(userInp.nextLine());
+			System.out.println("Input first name :");
+			String first = userInp.nextLine();
+			Scanner userInp2 = new Scanner(System.in);
+			System.out.println("Input last name :");
+			String last = userInp.nextLine();
+		    addNewStudent(first, last);
 		} catch (InputMismatchException e) {
 			System.out.println("Sorry, that was not a valid input.");
 			addStudent();
 		}
 
-		// for (int i = 0; i < 3; i++) {
-		// int p = i + 1;
-		// System.out.println("Please enter course " + p + " name:");
-		// String course = userInp.nextLine();
-		// System.out.println("Please enter course " + p + " grade:");
-		// String grade = userInp.nextLine();
-		// getStudent(getClassSize() - 1).getTranscript().add(new Course(course, grade,
-		// gradeConverter(grade)));
-		// }
+		 for (int i = 0; i < 3; i++) {
+		 int p = i + 1;
+		 Scanner userInp = new Scanner(System.in);
+		 System.out.println("Please enter course " + p + " name:");
+		 String course = userInp.nextLine();
+		 System.out.println("Please enter course " + p + " grade:");
+		 String grade = userInp.nextLine();
+		getStudent(getClassSize() - 1).getTranscript().add(new Course(course, grade));
+		 }
+		 getStudent(getClassSize()-1).setGPA();
 
 		displayStudents();
 	}
@@ -140,7 +148,7 @@ public class Roster {
 	public void displayStudents() {
 		DecimalFormat df2 = new DecimalFormat("#.##");
 		for (Student s : studentList) {
-			System.out.print("\n[" + studentList.indexOf(s) + "] " + s.getName() + "| ");
+			System.out.print("\n[" + studentList.indexOf(s) + "] " + s.getfirstName() + " " + s.getLastName() + "| ");
 			for (Course c : s.getTranscript()) {
 				System.out.print(c.getName() + ": " + c.getLetterGrade() + ", ");
 			}
@@ -149,3 +157,4 @@ public class Roster {
 		System.out.print("\n\n");
 	}
 }
+
