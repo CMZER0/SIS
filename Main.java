@@ -12,6 +12,7 @@ public class Main {
         r.newStudentList();
         r.createLastNames();
         mainMenu();
+        System.out.println("Cole Pull req on 020421");
     }
 
     private static void mainMenu() {
